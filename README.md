@@ -58,9 +58,7 @@ select e.last_name,e.first_name,d.dept_no from employees as e left outer join de
 
 **SQL7:**
 
-
-
-
+Select emp_no,count(emp_no) as t from salaries group by emp_no having t>15;
 
 
 
