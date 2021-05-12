@@ -60,7 +60,13 @@ select e.last_name,e.first_name,d.dept_no from employees as e left outer join de
 
 Select emp_no,count(emp_no) as t from salaries group by emp_no having t>15;
 
+**SQL8:**
 
+Select distinct salary from salaries where to_date='9999-01-01' order by salary desc;//去重
+
+select salary from salaries where to_date='9999-01-01' group by salary order by salary desc;//分组
+
+**SQL10:**
 
 
 
