@@ -68,6 +68,14 @@ select salary from salaries where to_date='9999-01-01' group by salary order by 
 
 **SQL10:**
 
+Select emp_no from employees where emp_no not in(select emp_no from dept_manager);
+
+Select e.emp_no from employees as e left join dept_manager as d on e.emp_no=d.emp_no where dept_no is null;//dept_no是领导特有的字段
+
+**SQL11:**
+
+
+
 
 
 **SQL55:**
