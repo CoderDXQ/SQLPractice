@@ -1,4 +1,4 @@
-# SQLPractice
+#SQLPractice
 
 语句练习：https://www.nowcoder.com/ta/sql
 
@@ -74,7 +74,33 @@ Select e.emp_no from employees as e left join dept_manager as d on e.emp_no=d.em
 
 **SQL11:**
 
+Select e.emp_no,m.emp_no as manager_no from dept_emp as e inner join dept_manager as m on e.dept_no=m.dept_no where e.emp_no!=m.emp_no and e.to_date='9999-01-01' and m.to_date='9999-01-01';
 
+**SQL12:**
+
+select
+
+   t1.dept_no,t2.emp_no,t1.salary
+
+From
+
+  (Select d.dept_no,max(s.salary) salary from dept_emp d join salaries s on d.emp_no=s.emp_no and d.to_date='9999-01-01' and s.to_date='9999-01-01' group by d.dept_no) t1
+
+join
+
+  (Select d.emp_no,d.dept_no,s.salary from dept_emp d join salaries s on d.emp_no=s.emp_no and d.to_date='9999-01-01' and s.to_date='9999-01-01')t2
+
+on
+
+  t1.dept_no=t2.dept_no and t1.salary=t2.salary
+
+order by
+
+ t1.dept_no;//dept_no和emp_no是无关联的，所以这两个字段也需要创建
+
+order by 不能在group by之后使用，会打乱分组的顺序，每条记录的字段是分散的，在查询时可能会打乱。
+
+![image-20210518155521496](/Users/duanxiangqing/Library/Application Support/typora-user-images/image-20210518155521496.png)
 
 
 
