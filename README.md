@@ -102,6 +102,8 @@ order by 不能在group by之后使用，会打乱分组的顺序，每条记录
 
 ![image-20210518155521496](/Users/duanxiangqing/Library/Application Support/typora-user-images/image-20210518155521496.png)
 
+**SQL13:**
+
 
 
 **SQL55:**
