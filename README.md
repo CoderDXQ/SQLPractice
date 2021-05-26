@@ -102,9 +102,13 @@ order by 不能在group by之后使用，会打乱分组的顺序，每条记录
 
 ![image-20210518155521496](/Users/duanxiangqing/Library/Application Support/typora-user-images/image-20210518155521496.png)
 
-**SQL13:**
+**SQL15:**
 
+Select * from employees where emp_no%2=1 and last_name!='Mary' order by hire_date desc;
 
+Select * from employees where emp_no & 1 and last_name<>'Mary' order by hire_date desc;
+
+**SQL16:**
 
 **SQL55:**
 
