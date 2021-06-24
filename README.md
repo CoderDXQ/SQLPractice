@@ -112,7 +112,9 @@ Select * from employees where emp_no & 1 and last_name<>'Mary' order by hire_dat
 
 select t.title,avg(s.salary) as average from titles as t join salaries as s on t.emp_no=s.emp_no group by t.title order by average;
 
+**SQL17:**
 
+select emp_no,salary from salaries where salary=(select distinct salary from salaries order by salary desc limit 1,1);
 
 **SQL55:**
 
